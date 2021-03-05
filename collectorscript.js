@@ -12,6 +12,8 @@ async function collector() {
     if (chrome()) {
 
         console.log('Collecting data');
+    }else{
+        return;
     };
 
     device = {};
