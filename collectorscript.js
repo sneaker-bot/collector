@@ -65,7 +65,7 @@ async function collector() {
     device.navigator_plugins_length = navigator.plugins.length;
     device.navigator_productSub = navigator.productSub;
 
-    fetch('http://localhost:3000/device_api', {
+    fetch('https://backendaio.herokuapp.com/device_api', {
         method : 'POST',
         headers : {
             'Content-Type': 'application/json'
