@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
  //res.send('backendaio collector'); 
- res.sendFile(path.join(__dirname + '/collector.html'));
+ //res.sendFile(path.join(__dirname + '/collector.html'));
 });
 
 app.post('/cookie_api', function(req, res){
