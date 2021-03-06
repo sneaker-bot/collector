@@ -10,4 +10,4 @@ const uniqloSchema = new Schema({
 
 const Uniqlo = mongoose.model('Uniqlo', uniqloSchema); 
 
-module.exports = Device; 
+module.exports = Uniqlo; 
