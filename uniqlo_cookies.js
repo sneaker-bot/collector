@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 const uniqloSchema = new Schema({
-	data : {
-		type : Object,
+	abck_cookie : {
+		type : String,
 		required : true
 	}
 });

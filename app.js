@@ -29,13 +29,16 @@ app.post('/cookie_api', function(req, res){
 	//res.sendFile(path.join(__dirname + '/collector.html'));
 	res.send(200);
 	var data = req.body;
-	var site = data['site'];
-	var cookie = data['cookie'];
+	var site = data['site'].toString();
+	var cookie = data['cookie'].toString();
 
-	const uniqlo = new Uniqlo({
-		data : data
-	});
-	uniqlo.save();
+	if(site == 'Uniqlo'){
+
+		const uniqlo = new Uniqlo({
+			abck_cookie : cookie
+		});
+		uniqlo.save();
+	};
 });
 
 //app.get('/collectorscript.js',function(req,res){
