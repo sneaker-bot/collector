@@ -18,6 +18,6 @@ const UniqloSchema = new Schema({
 	}
 });
 
-const Uniqlo = mongoose.model('uniqlo', niqlo); 
+const Uniqlo = mongoose.model('uniqlo', UniqloSchema); 
 
 module.exports = Uniqlo; 
