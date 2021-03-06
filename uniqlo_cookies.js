@@ -18,6 +18,6 @@ const deviceSchema = new Schema({
 	}
 });
 
-const Device = mongoose.model('uniqlo', deviceSchema); 
+const Device = mongoose.model('Uniqlo', deviceSchema); 
 
 module.exports.Uniqlo = Device; 
