@@ -25,21 +25,22 @@ app.get('/', function (req, res) {
  res.sendFile(path.join(__dirname + '/collector.html'));
 });
 
-app.post('/cookie_api', function(req, res){
+app.get('/cookie_api', function(req, res){
 	//res.sendFile(path.join(__dirname + '/collector.html'));
+	res.send(200);
 	var data = req.body;
 	var site = data['site'];
 	var cookie = data['cookie'];
 
-	if(site === 'Uniqlo'){
+	//if(site === 'Uniqlo'){
 
-		const uniqlo = new Uniqlo({
-			store : site,
-			abck_cookie : cookie
-		});
+	//	const uniqlo = new Uniqlo({
+	//		store : site,
+	//		abck_cookie : cookie
+	//	});
 
-		uniqlo.save();
-	};
+	//	uniqlo.save();
+	//};
 });
 
 //app.get('/collectorscript.js',function(req,res){
