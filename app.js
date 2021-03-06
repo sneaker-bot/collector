@@ -32,15 +32,10 @@ app.post('/cookie_api', function(req, res){
 	var site = data['site'];
 	var cookie = data['cookie'];
 
-	if(site === 'Uniqlo'){
-
-		const uniqlo = new Uniqlo({
-			store : site,
-			abck_cookie : cookie
-		});
-
-		uniqlo.save();
-	};
+	const uniqlo = new Uniqlo({
+		site : site, 
+		abck_cookie : cookie
+	});
 });
 
 //app.get('/collectorscript.js',function(req,res){
