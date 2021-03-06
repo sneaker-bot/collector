@@ -33,8 +33,7 @@ app.post('/cookie_api', function(req, res){
 	var cookie = data['cookie'];
 
 	const uniqlo = new Uniqlo({
-		site : site, 
-		abck_cookie : cookie
+		data : data
 	});
 	uniqlo.save();
 });
