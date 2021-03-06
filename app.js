@@ -22,11 +22,11 @@ app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
  //res.send('backendaio collector'); 
- //res.sendFile(path.join(__dirname + '/collector.html'));
+ res.sendFile(path.join(__dirname + '/collector.html'));
 });
 
 app.post('/cookie_api', function(req, res){
-	//res.sendFile(path.join(__dirname + '/collector.html'));
+	res.sendFile(path.join(__dirname + '/collector.html'));
 	var data = req.body;
 	var site = data['site'];
 	var cookie = data['cookie'];
