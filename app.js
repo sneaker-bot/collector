@@ -41,6 +41,16 @@ app.post('/cookie_api', function(req, res){
 	};
 });
 
+app.get('/uniqlo/cookie_api', function(req, res){
+	//res.sendFile(path.join(__dirname + '/collector.html'));
+	Uniqlo.find({}, (error,data) => {
+		if(error){
+			res.send('no cookies');
+		}else{
+			res.send(data);
+		};
+	})
+});
 //app.get('/collectorscript.js',function(req,res){
 //   res.sendFile(path.join(__dirname + '/collectorscript.js')); 
 //});
