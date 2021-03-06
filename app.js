@@ -43,7 +43,7 @@ app.post('/cookie_api', function(req, res){
 
 app.get('/uniqlo/cookie_api', function(req, res){
 	//res.sendFile(path.join(__dirname + '/collector.html'));
-	Uniqlo.find.sort({ createdAt: 1 }, (error,data) => {
+	Uniqlo.findOne({}, (error,data) => {
 		if(error){
 			res.send('no cookies');
 		}else{
