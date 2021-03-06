@@ -7,17 +7,17 @@ mongoose.connect(mongo_db_url, { useUnifiedTopology: true, useNewUrlParser : tru
 	console.log(err);
 });
 
-const deviceSchema = new Schema({
+const UniqloSchema = new Schema({
 	store : {
 		type : String,
-		required : false
+		required : true
 	},
 	abck_cookie : {
 		type : String,
-		required : false
+		required : true
 	}
 });
 
-const Uniqlo = mongoose.model('uniqlo', deviceSchema); 
+const Uniqlo = mongoose.model('uniqlo', niqlo); 
 
 module.exports = Uniqlo; 

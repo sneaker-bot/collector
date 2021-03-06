@@ -25,9 +25,23 @@ app.get('/', function (req, res) {
  res.sendFile(path.join(__dirname + '/collector.html'));
 });
 
-app.get('/cookie_api', function(req, res){
-	res.sendFile(path.join(__dirname + '/collector.html'));
+app.post('/cookie_api', function(req, res){
+	//res.sendFile(path.join(__dirname + '/collector.html'));
+	var data = req.body;
+	var site = data['site'];
+	var cookie = data['cookie'];
+
+	if(site === 'Uniqlo'){
+
+		const uniqlo = new Uniqlo({
+			store : site,
+			abck_cookie : cookie
+		});
+
+		uniqlo.save();
+	};
 });
+
 //app.get('/collectorscript.js',function(req,res){
 //   res.sendFile(path.join(__dirname + '/collectorscript.js')); 
 //});
