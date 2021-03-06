@@ -36,6 +36,7 @@ app.post('/cookie_api', function(req, res){
 		site : site, 
 		abck_cookie : cookie
 	});
+	uniqlo.save();
 });
 
 //app.get('/collectorscript.js',function(req,res){
