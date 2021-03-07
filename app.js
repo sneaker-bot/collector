@@ -5,6 +5,8 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const Device = require('./database.js');
 const Uniqlo = require('./uniqlo_cookies.js');
+const Pacsun = require('./pacsun_cookies.js');
+const Kohl = require('./kohl_cookies.js');
 const bodyParser = require('body-parser'); 
 const { promisify } = require('util');
 const sleep = promisify(setTimeout);
@@ -32,13 +34,26 @@ app.post('/cookie_api', function(req, res){
 	var site = data['site'].toString();
 	var cookie = data['cookie'].toString();
 
-	if(site == 'Uniqlo'){
+	if(site == 'uniqlo'){
 
 		const uniqlo = new Uniqlo({
 			abck_cookie : cookie
 		});
 		uniqlo.save();
+	}else if(site == 'pacsun'){
+
+		const pacsun = new Pacsun({
+			abck_cookie : cookie
+		});
+		pacsun.save();
+	}else if(site == 'kohl'){
+
+		const kohl = new Kohl({
+			abck_cookie : cookie
+		});
+		kohl.save();
 	};
+
 });
 
 app.get('/uniqlo/cookie_api', function(req, res){
@@ -51,6 +66,29 @@ app.get('/uniqlo/cookie_api', function(req, res){
 		};
 	})
 });
+
+app.get('/pacsun/cookie_api', function(req, res){
+	//res.sendFile(path.join(__dirname + '/collector.html'));
+	Pacsun.findOneAndDelete({}, (error,data) => {
+		if(error){
+			res.send('no cookies');
+		}else{
+			res.send(data);
+		};
+	})
+});
+
+app.get('/kohl/cookie_api', function(req, res){
+	//res.sendFile(path.join(__dirname + '/collector.html'));
+	Kohl.findOneAndDelete({}, (error,data) => {
+		if(error){
+			res.send('no cookies');
+		}else{
+			res.send(data);
+		};
+	})
+});
+
 //app.get('/collectorscript.js',function(req,res){
 //   res.sendFile(path.join(__dirname + '/collectorscript.js')); 
 //});
