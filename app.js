@@ -12,7 +12,7 @@ const { promisify } = require('util');
 const sleep = promisify(setTimeout);
 
 const port = process.env.PORT || 3000;
-const mongo_db_url = 'mongodb+srv://bach:bach30121234@devices.psqu0.mongodb.net/Akamai-Devices?retryWrites=true&w=majority';
+const mongo_db_url = 'mongodb+srv://bach:password@devices.psqu0.mongodb.net/Akamai-Devices?retryWrites=true&w=majority';
 mongoose.connect(mongo_db_url, { useUnifiedTopology: true, useNewUrlParser : true }).then(() => {
 	console.log('Connected to database');
 	app.listen(port);
